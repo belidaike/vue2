@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <!-- <style>
+        .box {
+            padding: 100px 0;
+            width: 400px;
+            text-align: center;
+            background: #ddd;
+            margin: 20px;
+            display: inline-block;
+        }
+        
+        
+    </style> -->
+    <style>
+        body{
+            background: #eee;
+            max-width: 960px;
+            margin: 20px auto;
+        }
+        p, h3, ul{
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style-type: none;
+            background: #fff;
+            margin: 20px auto;
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        li.fav {
+            background: #ff9ed2;
+            color: white;
+        }
+        
+        
+        
+    </style>
+</head>
+<body>
+    <h1>Hello World</h1>
+
+    <div id="app">
+        <!-- ATTRIBUTE BINDING -->
+        <!-- <a :href="url">FB</a> -->
+
+
+        <div v-if="showBooks">
+            <ul>
+                <li v-for="details in books" :class="{ fav: details.isFav }" @click="toggleFav(details)">
+                    <img :src="details.img" :alt="details.title">
+                    <h3>{{ details.title }}</h3>
+                    <p>{{ details.author }}</p>
+                </li>
+            </ul>
+        </div>
+
+        <!-- <div v-if="showBooks">
+            <ul>
+                <li v-for="details in filteredBooks" :class="{ fav: details.isFav }" @click="toggleFav(details)">
+                    <img :src="details.img" :alt="details.title">
+                    <h3>{{ details.title }}</h3>
+                    <p>{{ details.author }}</p>
+                </li>
+            </ul>
+        </div> -->
+
+       
+
+        <button @click="toggleShowBooks">
+
+            <span v-if="showBooks">Hide Books</span>
+            <span v-if="!showBooks">Show Books</span>
+            <!-- <span v-else>showBooks</span> -->
+            <!-- <span v-if="showBooks == false">Show Books</span> -->
+
+        </button>
+        
+        <br>
+        <!-- mouse events -->
+        <!-- <div class="box" @mouseover="handleEvent($event, 5)">mous eover (enter)</div>
+        <div class="box" @mouseleave="handleEvent">mouse leave</div>
+        <div class="box" @dblclick="handleEvent">double click</div>
+        <div class="box" @mousemove="handleMousemove">position {{ x }} {{ y }}</div> -->
+
+        <!-- <div v-show="showBooks">currently showing books</div> -->
+
+        
+
+        <!-- <button @click="age++">Increase age</button>
+        <button @click="age--">Decrease age</button>
+        <div @click="title = 'Bayabas'">change title</div>
+        <button @click="changeTitle('Rubick Cube')">Change Title</button> -->
+
+    </div>
+
+
+
+    <!-- <div id="ike">{{ something }}</div> -->
+
+    <script src="app.js"></script>
+    <!-- <script src="ike.js"></script> -->
+</body>
+</html>
